@@ -21,18 +21,18 @@ A simple "googling" can bring to you a bunch of ways to perform FTS in more comm
 ### Setup
 ``` bash
   $ git clone git@github.com:abmBispo/rails-autocomplete.git
-	$ cd rails-autocomplete
+  $ cd rails-autocomplete
   $ bundle install
 ```
 
 ### Database setup
 ``` bash
-	$ rails db:create db:migrate db:seed
+  $ rails db:create db:migrate db:seed
 ```
 
 ### Iniciar aplicação
 ```bash
-	$ rails s
+  $ rails s
 ```
 ### Documentation
 ### Links
