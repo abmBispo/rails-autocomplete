@@ -1,0 +1,35 @@
+pt-BR:
+  date:
+    month_names: [
+      'janeiro',
+      'fevereiro',
+      'março',
+      'abril',
+      'maio',
+      'junho',
+      'julho',
+      'agosto',
+      'setembro',
+      'outubro',
+      'novembro',
+      'dezembro'
+    ]
+    formats:
+      default: '%d/%m/%Y'
+      international: '%Y-%m-%d'
+      descriptive_datetime: '%d de %B de %Y, às %H:%M'
+  time:
+    formats:
+      default: '%H:%M'
+      international: '%H-%M-%S'
+      descriptive_datetime: '%d de %B de %Y, às %H:%M'
+      datetime_default: '%d/%m/%Y - %H:%M'
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: Título não pode estar em branco.
+            body:
+              blank: Corpo não pode estar em branco.
