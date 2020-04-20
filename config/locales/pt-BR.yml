@@ -32,4 +32,5 @@ pt-BR:
             title:
               blank: Título não pode estar em branco.
             body:
-              blank: Corpo não pode estar em branco.
+              blank: Conteúdo não pode estar em branco.
+              too_long: Conteúdo não pode ter mas de 140 caracteres.

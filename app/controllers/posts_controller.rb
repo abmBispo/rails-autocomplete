@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     if @post.save
       render json: @post
     else
-      render json: { error: @post.errors.messages.values.flatten.first }
+      render json: { error: @post.errors.messages.values.flatten.first }, status: 406
     end
   end
 
