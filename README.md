@@ -20,6 +20,7 @@ FROM posts;
 ![MySQL Example](https://raw.githubusercontent.com/abmBispo/rails-autocomplete/master/docs/example_mysql.jpeg)
 
 In the **boolean approach** you can use some other tools that can change the "score" for each word individually. Using the natural language mode you could find some good matches and it's easy to implement, mainly if we compare to the boolean mode. But this doesn't cover use cases when the user types the input incorrectly. So it expects from the user **great accurate way of writing** - and this's never the truth. The same case for PostgreSQL: there are some ways you can do FTS, but . Here we have a problem we can solve only by *analyzing the string deeper*. Look when we just change 'lei' to 'le' (remove 'i'), that happens to our score:
+
 ![MySQL Example](https://raw.githubusercontent.com/abmBispo/rails-autocomplete/master/docs/example_2_mysql.jpeg)
 
 In order to solve this issue ElasticSearches implemented it's FTS with [Java Lucene Engine](https://www.tutorialspoint.com/lucene/lucene_standardanalyzer.htm). It brings to us a bunch of tools like misspellings interpretation, stemming and special characteres - *como acentos na minha língua pátria!* - and others. All this stuff can be really complex to develop by our own, so it's extremely justifiable use ElasticSearch if you seek for those tools.
@@ -66,7 +67,7 @@ And turn on again with:
   $ bin/rails s
 ```
 ### Documentation
-[Here you can get](https://documenter.getpostman.com/view/479599/Szf9V7JZ?version=latest) a brief documentation on Postman over the API searching and creating. 
+[Here you can get](https://documenter.getpostman.com/view/479599/Szf9V7JZ?version=latest) a brief documentation on Postman over the API searching and creating.
 
 ### Links
 * [Docker run](https://docs.docker.com/engine/reference/commandline/container_run/)
