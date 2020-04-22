@@ -29,25 +29,49 @@ In order to solve this issue ElasticSearches implemented it's FTS with [Java Luc
 * ElasticSearch version: **7.6.2**
 * PostgreSQL version: **12.1**
 * MySQL version: **14.14**
+* Docker version: **18.09.6, build 481bc77**
 
 ### Setup
 ```bash
+  $ gem install bundler
   $ git clone git@github.com:abmBispo/rails-autocomplete.git
   $ cd rails-autocomplete
   $ bundle install
 ```
 
+#### Docker
+It's very easy to run containers of this rails service dependencies - PostgreSQL and ElasticSearch - instead of installing it in your machine. It could help you to better handle the processes and memory and storage administration. So here you got a snippet to do exactly that:
+```bash
+  $ docker run --name postgres-database -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+  $ docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -d -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+```
+
+If you're new to docker and have only this to images running, you could turn off it by only executing:
+```bash
+  $ sudo docker stop $(sudo docker ps -a -q)
+```
+
+And turn on again with:
+```bash
+  $ sudo docker start $(sudo docker ps -a -q -f "status=exited")
+```
+
 ### Database setup
 ```bash
-  $ rails db:create db:migrate db:seed
+  $ bin/rails db:create db:migrate db:seed
 ```
 
 ### Iniciar aplicação
 ```bash
-  $ rails s
+  $ bin/rails s
 ```
 ### Documentation
+[Here you can get](https://documenter.getpostman.com/view/479599/Szf9V7JZ?version=latest) a brief documentation on Postman over the API searching and creating. 
+
 ### Links
+* [Docker run](https://docs.docker.com/engine/reference/commandline/container_run/)
+* [Don't install Postgres. Docker pull Postgres](https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198)
+* [Running Elasticsearch as a docker service](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-compose-file)
 * [Java Lucene Engine](https://www.tutorialspoint.com/lucene/lucene_standardanalyzer.htm)
 * [SearchKick gem](https://github.com/ankane/searchkick)
 * [Postgres FTS](https://www.postgresql.org/docs/10/functions-textsearch.html)
