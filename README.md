@@ -1,4 +1,4 @@
-# Rails Autocomplete with ElasticSearch and SearchKick gem
+# Rails Autocomplete with ElasticSearch and SearchKick
 
 ### Intention
 My intention to build this repo was to share my brief knowledge about this subject: full-text search, or just **FTS**. As you will see I've made some tests and research to reach that conclusion, some links in the last section could help anyone who wants to understand what I've read and (why not?) even help and make some contributions to this very repository (PR's are appreciated).
@@ -19,7 +19,8 @@ FROM posts;
 ```
 ![MySQL Example](https://raw.githubusercontent.com/abmBispo/rails-autocomplete/master/docs/example_mysql.jpeg)
 
-In the **boolean approach** you can use some other tools that can change the "score" for each word individually. Using the natural language mode you could find some good matches and it's easy to implement, mainly if we compare to the boolean mode. But this doesn't cover use cases when the user types the input incorrectly. So it expects from the user great **accurate way of writing** - and this's never the truth. The same case for PostgreSQL: there are some ways you can do FTS, but . Here we have a problem we can solve only by *analyzing the string deeper*. Look when we just change 'lei' to 'le' (remove 'i'), that happens to our score:
+In the **boolean approach** you can use some other tools that can change the "score" for each word individually. Using the natural language mode you could find some good matches and it's easy to implement, mainly if we compare to the boolean mode. But this doesn't cover use cases when the user types the input incorrectly. So it expects from the user **great accurate way of writing** - and this's never the truth. The same case for PostgreSQL: there are some ways you can do FTS, but . Here we have a problem we can solve only by *analyzing the string deeper*. Look when we just change 'lei' to 'le' (remove 'i'), that happens to our score:
+
 ![MySQL Example](https://raw.githubusercontent.com/abmBispo/rails-autocomplete/master/docs/example_2_mysql.jpeg)
 
 In order to solve this issue ElasticSearches implemented it's FTS with [Java Lucene Engine](https://www.tutorialspoint.com/lucene/lucene_standardanalyzer.htm). It brings to us a bunch of tools like misspellings interpretation, stemming and special characteres - *como acentos na minha língua pátria!* - and others. All this stuff can be really complex to develop by our own, so it's extremely justifiable use ElasticSearch if you seek for those tools.
