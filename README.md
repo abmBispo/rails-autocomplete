@@ -66,7 +66,7 @@ And turn on again with:
   $ bin/rails s
 ```
 ### Documentation
-[Here you can get](https://documenter.getpostman.com/view/479599/Szf9V7JZ?version=latest) a brief documentation on Postman over the API searching and creating. 
+[Here you can get](https://documenter.getpostman.com/view/479599/Szf9V7JZ?version=latest) a brief documentation on Postman over the API searching and creating.
 
 ### Links
 * [Docker run](https://docs.docker.com/engine/reference/commandline/container_run/)

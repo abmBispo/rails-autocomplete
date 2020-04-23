@@ -6,5 +6,7 @@ class Post < ApplicationRecord
   validates :title,         length: { maximum: 45 }
   validates :body,          length: { maximum: 140 }
 
-  searchkick word_start: [:title, :body]
+  searchkick  word_middle: [:title],
+              text_middle: [:body],
+              language: 'brazilian'
 end
