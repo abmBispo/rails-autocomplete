@@ -30,7 +30,8 @@ pt-BR:
         post:
           attributes:
             title:
+              too_long: Título não pode ter mas de 140 caracteres.
               blank: Título não pode estar em branco.
             body:
               blank: Conteúdo não pode estar em branco.
-              too_long: Conteúdo não pode ter mas de 140 caracteres.
+              too_long: Conteúdo não pode ter mas de 1000 (mil) caracteres.

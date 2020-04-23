@@ -8,5 +8,11 @@ class Post < ApplicationRecord
 
   searchkick  word_middle: [:title],
               text_middle: [:body],
-              language: 'brazilian'
+              language: 'brazilian',
+              synonyms: [
+                ["coronavirus", "COVID-19"],
+                ["corona virus", "COVID-19"],
+                ["corona virus", "COVID"],
+                ["coronavirus", "COVID"]
+              ]
 end
